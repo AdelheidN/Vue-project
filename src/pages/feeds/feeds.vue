@@ -1,4 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
+<!-- eslint-disable no-unused-vars -->
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
    <div class="topline">
         <topline>
@@ -9,9 +11,17 @@
 
             </template>
             <template #content>
-                <story-user-item
+                <ul class="stories">
+                    <li class="stories-item" v-for="story in stories" :key="story.id">
+                        <story-user-item
+                            :avatar="story.avatar"
+                            :username="story.username"
+                            @onPress="handlePress(story.id)"
+                        />
+                    </li>
 
-                />
+                </ul>
+
             </template>
         </topline>
    </div>
@@ -19,20 +29,20 @@
 
 <script>
 import { topline } from '../../components/topline'
-import { icon } from '../../icon'
+import { storyUserItem } from '../../components/storyUserItem'
+import stories from './data.json'
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'feeds',
   components: {
-    topline,
-    icon
+    topline, storyUserItem
+  },
+  data () {
+    return {
+      stories
+    }
   }
 }
 </script>
 
-<style lang="scss" scoped>
-    .icon {
-        color: black;
-        width: 50px;
-    }
-</style>
+<style lang="scss" scoped src="./feeds.scss"> </style>
