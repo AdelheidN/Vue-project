@@ -1,12 +1,9 @@
-<!-- eslint-disable vue/multi-word-component-names -->
-<!-- eslint-disable no-unused-vars -->
-<!-- eslint-disable vue/multi-word-component-names -->
 <template>
    <div class="topline">
         <topline>
             <template #headline>
                 <div class="icon">
-                    <icon name="home"/>
+                    <icon name="home"></icon>
                 </div>
 
             </template>
