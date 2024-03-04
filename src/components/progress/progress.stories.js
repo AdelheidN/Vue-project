@@ -1,22 +1,21 @@
-import progress from './progress.vue'
+import progress from "./progress.vue";
 
 export default {
-    title: 'progress',
-    component: progress,
-    argTypes: {
-        onFinish: {
-            action: "onFinish",
-            descriptopn: 'fires when progess reaches the end'
-        }
-    }
-}
-
-const template = (args) => ({
-    components: {xProgress: progress}.
-    data () {
-        return { args }
+  title: "Progress bar",
+  component: { progress },
+  argTypes: {
+    onFinish: {
+      action: "onFinish",
+      description: "When progress loaded",
     },
-    template: '<x-progress @onFinish="args.onFinish"/>'
-})
+  },
+};
 
-export const Default = template.bind({})
+export const defaultView = (args) => ({
+  components: { xProgress: progress },
+  data() {
+    return { args };
+  },
+  template: `
+    <x-progress @onFinish="args.onFinish" />`,
+});

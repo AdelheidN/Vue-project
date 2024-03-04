@@ -1,6 +1,6 @@
-/** @type { import('@storybook/vue3').Preview } */
-
 import "../src/global.scss";
+
+/** @type { import('@storybook/vue3').Preview } */
 const preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
@@ -10,6 +10,13 @@ const preview = {
         date: /Date$/i,
       },
     },
+  },
+  webpackFinal: async (config) => {
+    config.plugins.push({
+      test: /\.scss$/i,
+      use: ['style-loader', 'sass-loader'],
+    });
+    return config;
   },
 };
 

@@ -16,7 +16,7 @@ const template = (args) => ({
         return { args }
     },
     template: `
-        <x-button v-bind="args"> Following </x-button>
+        <xButton v-bind="args"> Following </xButton>
     `
 });
 

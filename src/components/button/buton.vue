@@ -1,5 +1,5 @@
 <template>
-    <button 
+    <button
     :class="[
         'c-button', `theme-green`,
         {'hover-text': withHoverText}
@@ -31,3 +31,5 @@ export default {
 }
 
 </script>
+
+<style lang="scss" scoped src="./button.scss"></style>

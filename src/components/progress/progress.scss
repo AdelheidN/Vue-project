@@ -1,4 +1,4 @@
-.c-progress {
+.progress {
     background: rgba(49, 174, 84, 0.3);
     height: 2px;
     border-radius: 10px;
@@ -18,6 +18,6 @@
     bottom: 0;
     left: 0;
     width: 0;
-    background: var(--green);
+    background: green;
     transition: 2s;
 }
